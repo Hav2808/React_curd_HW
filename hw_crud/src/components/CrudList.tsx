@@ -19,7 +19,7 @@ export const CrudList = {
         
     },
 
-    post: (text: string, check: React.Dispatch<React.SetStateAction<Boolean>>) => {
+    post: (text: string, check: React.Dispatch<React.SetStateAction<boolean>>) => {
         axios({
             method: 'post',
             url: BASE_URL,
@@ -32,7 +32,7 @@ export const CrudList = {
         )
     },
 
-    delete: (id: number, check: React.Dispatch<React.SetStateAction<Boolean>>) => {
+    delete: (id: number, check: React.Dispatch<React.SetStateAction<boolean>>) => {
         axios({
             method: 'delete',
             url: BASE_URL + `/${id}`,

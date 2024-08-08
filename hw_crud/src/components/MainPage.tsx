@@ -11,9 +11,15 @@ export type TypeNote = {
 }
 
 export const MainPage: FC = () => {
-    const [check, setCheck] = useState<Boolean>(false)
+    const [check, setCheck] = useState<boolean>(false)
     const [noteList, setNoteList] = useState<TypeNote[]>([])
 
+    // Загрузка списка заметок при начальном отображении
+    useEffect(() => {
+        CrudList.get(setNoteList)
+    }, []);
+
+    // Обновление списка заметок при изменении состояния check
     useEffect(
         () => {
             if (check) {

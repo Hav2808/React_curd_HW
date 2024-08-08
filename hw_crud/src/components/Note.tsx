@@ -4,11 +4,11 @@ import { CrudList } from "./CrudList"
 
 type PropsNote = {
     data: TypeNote
-    check: React.Dispatch<React.SetStateAction<Boolean>>
+    check: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export const Note: FC<PropsNote> = ({data, check}) => {
-    const hundleDelete = (id: number) => {
+    const handleDelete = (id: number) => {
         CrudList.delete(id, check)
     }
 
@@ -17,7 +17,7 @@ export const Note: FC<PropsNote> = ({data, check}) => {
             <p>
                 {data.content}
             </p>
-            <button className="delete" onClick={() => hundleDelete(data.id)}>
+            <button className="delete" onClick={() => handleDelete(data.id)}>
                 x
             </button>
         </div>
